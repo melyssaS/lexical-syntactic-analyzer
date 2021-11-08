@@ -30,10 +30,38 @@ int indice = 0;
 linea: 
 	|  linea SALTOLINEA
 	|  linea PUBLIC CLASS ID LAper linea LCier
-	|  linea PUBLIC STATIC VOID ID PAper STRINGW CAper CCier ID PCier LAper linea LCier	{fprintf(result,"Public Static Found");}
+	|  linea PUBLIC STATIC VOID ID PAper STRINGW CAper CCier ID PCier LAper linea LCier	
 	|  linea asignacion
 	;
-asignacion:
+asignacion: 
+	asigEntera
+	| generic
+	;
+
+interOp: interOp aritOper interOp
+	| PAper interOp PCier
+	| operador
+	;
+asigEntera: INTW ID PComa
+	| INTW ID IGUAL INT PComa
+	| INTW ID IGUAL interOp PComa
+	;
+operador: INT
+	|REAL	
+	|ID
+	|BOOLEAN	
+	;
+aritOper: SUM
+	|MEN
+	|MULT
+	|DIV
+	|MOD
+	;
+generic: ID IGUAL interOp PComa
+	| ID IGUAL CHAR PComa
+	| ID IGUAL BOOLEAN PComa
+	| ID IGUAL STRING PComa
+	;
 %%
 int main()
 {	yyin=fopen("prueba.java","r");
