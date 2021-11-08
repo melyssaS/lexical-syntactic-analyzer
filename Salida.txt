@@ -1,0 +1,16 @@
+PUBLIC CLASS Id= AnyThing, Llave-a={ 
+PUBLIC STATIC VOID Id= main, Parent-a=( STRING Corchete-a=[ Corchete-c=] Id= args, Parent-c=) Llave-a={ 
+
+Llave-c=} Public Static Found
+Llave-c=} 
+ No hubo ningun error sintactico.
+
+TABLA DE IDENTIFICADORES
+Hay 3 identificadores
+Id=AnyThing; Id=main;Id=args
+
+TABLA DE ERRORES
+Hay 0 errores
+
+*****LISTA DE ERRORES SINTÁCTICOS***** 
+El número total de errores es de: 0.
