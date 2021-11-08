@@ -33,7 +33,7 @@ linea:
 	|  linea PUBLIC STATIC VOID ID PAper STRINGW CAper CCier ID PCier LAper linea LCier	{fprintf(result,"Public Static Found");}
 	|  linea asignacion
 	;
-asignacion: 
+asignacion:
 %%
 int main()
 {	yyin=fopen("prueba.java","r");
