@@ -16,8 +16,8 @@ int indice = 0;
 %}
 %locations
 %start linea
-%token STRING ID INT REAL BOOLEAN
-%token IFELSE FOR WHILE DOUBLE INTW STRINGW CHARNEW PUBLIC CLASS STATIC VOID CHAR IF ELSE
+%token STRING ID INT REAL BOOLEAN CHARID
+%token IFELSE FOR WHILE DOUBLE INTW STRINGW BOOLEANW CHARNEW PUBLIC CLASS STATIC VOID CHAR IF ELSE
 %token COMMENT
 %token SUMSUM MENMEN SUMIGUAL MENIGUAL MULTIGUAL DIVIGUAL IGUALIGUAL MENORIGUAL MAYORIGUAL
 %token DIFF NOIGUAL YY OO NOT MAYOR MENOR
@@ -32,10 +32,13 @@ linea:
 	|  linea PUBLIC CLASS ID LAper linea LCier
 	|  linea PUBLIC STATIC VOID ID PAper STRINGW CAper CCier ID PCier LAper linea LCier	
 	|  linea asignacion
+	| linea COMMENT
+	| linea if
+	| linea bucles	
 	;
 asignacion: 
 	asigEntera
-	| generic
+	|generico
 	;
 
 interOp: interOp aritOper interOp
@@ -43,8 +46,31 @@ interOp: interOp aritOper interOp
 	| operador
 	;
 asigEntera: INTW ID PComa
+	| INTW ID IGUAL ID PComa
 	| INTW ID IGUAL INT PComa
 	| INTW ID IGUAL interOp PComa
+	;
+asigReal: DOUBLE ID PComa
+	| DOUBLE ID IGUAL ID PComa
+	| DOUBLE ID IGUAL REAL PComa
+	| DOUBLE ID IGUAL interOp PComa
+	;
+asigChar: CHAR ID PComa
+	| CHAR ID IGUAL ID PComa
+	| CHAR ID IGUAL CHARID PComa
+	;
+asigCadena: STRINGW ID PComa
+	| STRINGW ID IGUAL ID PComa
+	| STRINGW ID IGUAL STRING PComa
+	| STRINGW ID IGUAL concatenacion PComa
+	;
+concatenacion: concate OPSUM concate
+	| STRING
+	| ID
+	;	
+asigBool: BOOLEAN ID PComa
+	| BOOLEANW ID IGUAL ID PComa
+	| BOOLEANW ID IGUAL BOOLEAN PComa
 	;
 operador: INT
 	|REAL	
@@ -61,7 +87,18 @@ generic: ID IGUAL interOp PComa
 	| ID IGUAL CHAR PComa
 	| ID IGUAL BOOLEAN PComa
 	| ID IGUAL STRING PComa
+	| ID IGUAL concatenacion PComa
+	| ID dobleOper PCOMA
+	| ID especialOper		
 	;
+dobleOper: SUMSUM
+	|MENMEN
+	;
+especialOper: SUMIGUAL
+	|MENIGUAL
+	| MULTIGUAL
+	| DIVIGUAL
+	;	
 %%
 int main()
 {	yyin=fopen("prueba.java","r");

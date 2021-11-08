@@ -93,6 +93,7 @@ entero {digito}+
 booleana true|false
 real {entero}+(.{entero}+(e(\+|-){entero}+)?)?
 cadena \"(.*?)\"
+charVar \'[_a-zA-Z0-9]*\'
 identifier ({letra}|{validChar})({letra}|{digito}|{validChar})*
 comentario \/\/.*
 error {digito}+({letra}|{validChar})+
@@ -113,11 +114,13 @@ error2 [^{ifElse}{for}{while}{double}{int}{String}{charnew}{char}{public}{class}
                   else if (strcmp(yytext,"while") == 0){return WHILE;}
                   else if (strcmp(yytext,"for") == 0){return FOR;}
                   }
-{booleana}    {fprintf(result,"Cte-booleana=%s, ", yytext);return BOOLEAN;}
+{booleana}    {fprintf(result,"Cte-booleana=%s, ", yytext);return BOOLEANW;}
 {cadena} {fprintf(result,"Cte-cadena=%s, ", yytext);return STRING;}
+{charVar} {fprintf(result,"Cte-char=%s, ", yytext);return CHARID;}
 {identifier}  {setIdentifier(yytext);return ID;}
 {entero}    {fprintf(result,"Cte-ent=%s, ", yytext);return INT;}
 {real}    {fprintf(result,"Cte-real=%s, ", yytext);return REAL;}
+"boolean"    {fprintf(result,"BOOLEAN", yytext);return BOOLEAN;}
 {comentario} {fprintf(result, "Comentario=%s ", yytext);return COMMENT;}
 "++"  {fprintf(result,"Op-MasMas=%s ", yytext);return SUMSUM;}
 "--" {fprintf(result,"Op-SustSust=%s ", yytext);return MENMEN;}
