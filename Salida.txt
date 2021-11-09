@@ -1,17 +1,14 @@
-PUBLIC CLASS Id= AnyThing, Llave-a={ 
-PUBLIC STATIC VOID Id= main, Parent-a=( STRING Corchete-a=[ Corchete-c=] Id= args, Parent-c=) Llave-a={ 
-INT Id= a, Op-asign== Cte-ent=2, Punto-coma=; 
-INT Id= b, Op-asign== Cte-ent=2, Punto-coma=; 
-Llave-c=} 
-Llave-c=} 
- No hubo ningun error sintactico.
+INT Id= a, Op-asign== Cte-real=2, Punto-coma=; 
+DOUBLE Id= b, Op-asign== Cte-real=3, Punto-coma=; 
+
 
 TABLA DE IDENTIFICADORES
-Hay 5 identificadores
-Id=AnyThing; Id=main; Id=args; Id=a;Id=b
+Hay 2 identificadores
+Id=a;Id=b
 
 TABLA DE ERRORES
 Hay 0 errores
 
 *****LISTA DE ERRORES SINTÁCTICOS***** 
-El número total de errores es de: 0.
+El número total de errores es de: 1.
+La línea 1 tiene un error de tipo: syntax error
