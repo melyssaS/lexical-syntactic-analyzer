@@ -29,16 +29,19 @@ int indice = 0;
 
 linea: 
 	|  linea SALTOLINEA
-	|  linea PUBLIC CLASS ID LAper linea LCier
+	|  linea PUBLIC CLASS ID LAper linea LCier 	
 	|  linea PUBLIC STATIC VOID ID PAper STRINGW CAper CCier ID PCier LAper linea LCier	
 	|  linea asignacion
-	| linea COMMENT
-	| linea if
-	| linea bucles	
+	|  linea COMMENT
+	|  linea error SALTOLINEA
 	;
 asignacion: 
-	asigEntera
-	|generico
+	generico
+	|asigEntera
+	|asigReal
+	|asigChar
+	|asigCadena
+	|asigBool
 	;
 
 interOp: interOp aritOper interOp
@@ -64,11 +67,11 @@ asigCadena: STRINGW ID PComa
 	| STRINGW ID IGUAL STRING PComa
 	| STRINGW ID IGUAL concatenacion PComa
 	;
-concatenacion: concate OPSUM concate
+concatenacion: concatenacion SUM concatenacion
 	| STRING
 	| ID
 	;	
-asigBool: BOOLEAN ID PComa
+asigBool: BOOLEANW ID PComa
 	| BOOLEANW ID IGUAL ID PComa
 	| BOOLEANW ID IGUAL BOOLEAN PComa
 	;
@@ -83,12 +86,12 @@ aritOper: SUM
 	|DIV
 	|MOD
 	;
-generic: ID IGUAL interOp PComa
+generico: ID IGUAL interOp PComa
 	| ID IGUAL CHAR PComa
 	| ID IGUAL BOOLEAN PComa
 	| ID IGUAL STRING PComa
 	| ID IGUAL concatenacion PComa
-	| ID dobleOper PCOMA
+	| ID dobleOper PComa
 	| ID especialOper		
 	;
 dobleOper: SUMSUM

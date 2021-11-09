@@ -50,51 +50,53 @@ extern int yydebug;
     INT = 260,
     REAL = 261,
     BOOLEAN = 262,
-    IFELSE = 263,
-    FOR = 264,
-    WHILE = 265,
-    DOUBLE = 266,
-    INTW = 267,
-    STRINGW = 268,
-    CHARNEW = 269,
-    PUBLIC = 270,
-    CLASS = 271,
-    STATIC = 272,
-    VOID = 273,
-    CHAR = 274,
-    IF = 275,
-    ELSE = 276,
-    COMMENT = 277,
-    SUMSUM = 278,
-    MENMEN = 279,
-    SUMIGUAL = 280,
-    MENIGUAL = 281,
-    MULTIGUAL = 282,
-    DIVIGUAL = 283,
-    IGUALIGUAL = 284,
-    MENORIGUAL = 285,
-    MAYORIGUAL = 286,
-    DIFF = 287,
-    NOIGUAL = 288,
-    YY = 289,
-    OO = 290,
-    NOT = 291,
-    MAYOR = 292,
-    MENOR = 293,
-    MULT = 294,
-    SUM = 295,
-    MEN = 296,
-    DIV = 297,
-    IGUAL = 298,
-    MOD = 299,
-    PAper = 300,
-    PCier = 301,
-    CAper = 302,
-    CCier = 303,
-    LAper = 304,
-    LCier = 305,
-    PComa = 306,
-    SALTOLINEA = 307
+    CHARID = 263,
+    IFELSE = 264,
+    FOR = 265,
+    WHILE = 266,
+    DOUBLE = 267,
+    INTW = 268,
+    STRINGW = 269,
+    BOOLEANW = 270,
+    CHARNEW = 271,
+    PUBLIC = 272,
+    CLASS = 273,
+    STATIC = 274,
+    VOID = 275,
+    CHAR = 276,
+    IF = 277,
+    ELSE = 278,
+    COMMENT = 279,
+    SUMSUM = 280,
+    MENMEN = 281,
+    SUMIGUAL = 282,
+    MENIGUAL = 283,
+    MULTIGUAL = 284,
+    DIVIGUAL = 285,
+    IGUALIGUAL = 286,
+    MENORIGUAL = 287,
+    MAYORIGUAL = 288,
+    DIFF = 289,
+    NOIGUAL = 290,
+    YY = 291,
+    OO = 292,
+    NOT = 293,
+    MAYOR = 294,
+    MENOR = 295,
+    MULT = 296,
+    SUM = 297,
+    MEN = 298,
+    DIV = 299,
+    IGUAL = 300,
+    MOD = 301,
+    PAper = 302,
+    PCier = 303,
+    CAper = 304,
+    CCier = 305,
+    LAper = 306,
+    LCier = 307,
+    PComa = 308,
+    SALTOLINEA = 309
   };
 #endif
 /* Tokens.  */
@@ -103,51 +105,53 @@ extern int yydebug;
 #define INT 260
 #define REAL 261
 #define BOOLEAN 262
-#define IFELSE 263
-#define FOR 264
-#define WHILE 265
-#define DOUBLE 266
-#define INTW 267
-#define STRINGW 268
-#define CHARNEW 269
-#define PUBLIC 270
-#define CLASS 271
-#define STATIC 272
-#define VOID 273
-#define CHAR 274
-#define IF 275
-#define ELSE 276
-#define COMMENT 277
-#define SUMSUM 278
-#define MENMEN 279
-#define SUMIGUAL 280
-#define MENIGUAL 281
-#define MULTIGUAL 282
-#define DIVIGUAL 283
-#define IGUALIGUAL 284
-#define MENORIGUAL 285
-#define MAYORIGUAL 286
-#define DIFF 287
-#define NOIGUAL 288
-#define YY 289
-#define OO 290
-#define NOT 291
-#define MAYOR 292
-#define MENOR 293
-#define MULT 294
-#define SUM 295
-#define MEN 296
-#define DIV 297
-#define IGUAL 298
-#define MOD 299
-#define PAper 300
-#define PCier 301
-#define CAper 302
-#define CCier 303
-#define LAper 304
-#define LCier 305
-#define PComa 306
-#define SALTOLINEA 307
+#define CHARID 263
+#define IFELSE 264
+#define FOR 265
+#define WHILE 266
+#define DOUBLE 267
+#define INTW 268
+#define STRINGW 269
+#define BOOLEANW 270
+#define CHARNEW 271
+#define PUBLIC 272
+#define CLASS 273
+#define STATIC 274
+#define VOID 275
+#define CHAR 276
+#define IF 277
+#define ELSE 278
+#define COMMENT 279
+#define SUMSUM 280
+#define MENMEN 281
+#define SUMIGUAL 282
+#define MENIGUAL 283
+#define MULTIGUAL 284
+#define DIVIGUAL 285
+#define IGUALIGUAL 286
+#define MENORIGUAL 287
+#define MAYORIGUAL 288
+#define DIFF 289
+#define NOIGUAL 290
+#define YY 291
+#define OO 292
+#define NOT 293
+#define MAYOR 294
+#define MENOR 295
+#define MULT 296
+#define SUM 297
+#define MEN 298
+#define DIV 299
+#define IGUAL 300
+#define MOD 301
+#define PAper 302
+#define PCier 303
+#define CAper 304
+#define CCier 305
+#define LAper 306
+#define LCier 307
+#define PComa 308
+#define SALTOLINEA 309
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

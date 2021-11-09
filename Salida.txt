@@ -1,10 +1,13 @@
 PUBLIC CLASS Id= AnyThing, Llave-a={ 
 PUBLIC STATIC VOID Id= main, Parent-a=( STRING Corchete-a=[ Corchete-c=] Id= args, Parent-c=) Llave-a={ 
-INT 
+INT Id= a, Op-asign== Cte-ent=2, Punto-coma=; 
+DOUBLE Id= b, Corchete-a=[ Corchete-c=] Op-asign== Cte-ent=2, Op-sum=+ Cte-ent=3, Punto-coma=; 
+Llave-c=} 
+Llave-c=} 
 
 TABLA DE IDENTIFICADORES
-Hay 3 identificadores
-Id=AnyThing; Id=main;Id=args
+Hay 5 identificadores
+Id=AnyThing; Id=main; Id=args; Id=a;Id=b
 
 TABLA DE ERRORES
 Hay 0 errores

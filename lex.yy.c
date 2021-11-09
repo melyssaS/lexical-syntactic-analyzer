@@ -389,11 +389,11 @@ static const YY_CHAR yy_ec[256] =
        11,   12,   13,    1,   14,    1,   15,   16,   16,   16,
        16,   16,   16,   16,   16,   16,   16,    1,   17,   18,
        19,   20,    1,    1,   21,   21,   21,   21,   22,   21,
-       21,   21,   21,   21,   21,   23,   21,   21,   21,   21,
-       21,   21,   24,   21,   23,   21,   23,   21,   21,   21,
+       21,   21,   21,   21,   21,   21,   21,   21,   21,   21,
+       21,   21,   23,   21,   21,   21,   24,   21,   21,   21,
        25,    1,   26,    1,   27,    1,   28,   29,   30,   31,
 
-       32,   33,   34,   35,   36,   21,   21,   37,   23,   38,
+       32,   33,   34,   35,   36,   21,   21,   37,   24,   38,
        39,   40,   21,   41,   42,   43,   44,   45,   46,   21,
        21,   21,   47,   48,   49,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -461,7 +461,7 @@ static const flex_int16_t yy_nxt[425] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
        14,   15,   16,   17,   18,   19,   20,   21,   22,   23,
-        9,   24,   24,   25,   26,   27,    9,   24,   28,   29,
+        9,   24,   25,   24,   26,   27,    9,   24,   28,   29,
        30,   24,   31,   24,   24,   32,   24,   24,   24,   33,
        24,   34,   35,   24,   36,   37,   38,   39,   40,   44,
        50,   54,   52,   59,   60,   55,   51,   53,  108,  108,
@@ -943,7 +943,7 @@ YY_RULE_SETUP
 case 2:
 YY_RULE_SETUP
 #line 117 "lexico.l"
-{fprintf(result,"Cte-booleana=%s, ", yytext);return BOOLEANW;}
+{fprintf(result,"Cte-booleana=%s, ", yytext);return BOOLEAN;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
@@ -953,7 +953,7 @@ YY_RULE_SETUP
 case 4:
 YY_RULE_SETUP
 #line 119 "lexico.l"
-{fprintf(result,"Cte-char=%s, ", yytext);return CHARID;}
+{fprintf(result,"Cte-character=%s, ", yytext);return CHARID;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
@@ -973,7 +973,7 @@ YY_RULE_SETUP
 case 8:
 YY_RULE_SETUP
 #line 123 "lexico.l"
-{fprintf(result,"BOOLEAN", yytext);return BOOLEAN;}
+{fprintf(result,"%s","BOOLEAN");return BOOLEANW;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
