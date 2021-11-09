@@ -16,8 +16,8 @@ int indice = 0;
 %}
 %locations
 %start linea
-%token STRING ID INT REAL BOOLEAN CHARID
-%token IFELSE FOR WHILE DOUBLE INTW STRINGW BOOLEANW CHARNEW PUBLIC CLASS STATIC VOID CHAR IF ELSE
+%token STRING ID INT REAL BOOLEAN CHARID 
+%token IFELSE FOR WHILE DOUBLE INTW STRINGW BOOLEANW CHARNEW PUBLIC CLASS STATIC VOID CHAR IF ELSE NEW
 %token COMMENT
 %token SUMSUM MENMEN SUMIGUAL MENIGUAL MULTIGUAL DIVIGUAL IGUALIGUAL MENORIGUAL MAYORIGUAL
 %token DIFF NOIGUAL YY OO NOT MAYOR MENOR
@@ -42,6 +42,7 @@ asignacion:
 	|asigChar
 	|asigCadena
 	|asigBool
+	|asigVector PComa
 	;
 
 interOp: interOp aritOper interOp
@@ -67,6 +68,18 @@ asigCadena: STRINGW ID PComa
 	| STRINGW ID IGUAL STRING PComa
 	| STRINGW ID IGUAL concatenacion PComa
 	;
+
+asigVector: operador CAper CCier ID
+	  | asigVector IGUAL NEW operador CAper variableArreglo CCier
+	  | asigVector IGUAL LAper variablesPosibles LCier
+	  ;
+
+variablesPosibles: INT | DOUBLE | ID | BOOLEAN | STRING | CHAR
+       | variablesPosibles PComa variablesPosibles
+	   ;
+
+variableArreglo: INT| ID ;
+
 concatenacion: concatenacion SUM concatenacion
 	| STRING
 	| ID
@@ -75,10 +88,11 @@ asigBool: BOOLEANW ID PComa
 	| BOOLEANW ID IGUAL ID PComa
 	| BOOLEANW ID IGUAL BOOLEAN PComa
 	;
-operador: INT
-	|REAL	
-	|ID
-	|BOOLEAN	
+operador: INTW
+	|DOUBLE
+	|BOOLEANW	
+	|CHAR
+	|STRINGW
 	;
 aritOper: SUM
 	|MEN
