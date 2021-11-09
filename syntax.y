@@ -23,7 +23,7 @@ int indice = 0;
 %token DIFF NOIGUAL YY OO NOT MAYOR MENOR
 %token MULT SUM MEN DIV IGUAL MOD
 %token PAper PCier CAper CCier LAper LCier
-%token PComa 
+%token PComa COMA
 %right SALTOLINEA
 %%
 
@@ -47,7 +47,7 @@ asignacion:
 
 interOp: interOp aritOper interOp
 	| PAper interOp PCier
-	| operador
+	| op
 	;
 asigEntera: INTW ID PComa
 	| INTW ID IGUAL ID PComa
@@ -106,7 +106,7 @@ generico: ID IGUAL interOp PComa
 	| ID IGUAL STRING PComa
 	| ID IGUAL concatenacion PComa
 	| ID dobleOper PComa
-	| ID especialOper		
+	| ID especialOper	PComa	
 	;
 dobleOper: SUMSUM
 	|MENMEN
@@ -116,6 +116,41 @@ especialOper: SUMIGUAL
 	| MULTIGUAL
 	| DIVIGUAL
 	;	
+
+op: INT
+	|ID
+	|REAL
+	|arregloDeclar
+	;
+op_der: INT
+	|REAL
+	|ID
+	|BOOLEAN
+	|arregloDeclar
+	;
+op_all:
+	REAL
+	|INT
+	|ID
+	|BOOLEAN
+	|arregloDeclar
+	|STRING
+	|CHARID
+	;
+arregloDeclar: ID CAper variableArreglo CCier
+	| variableArreglo CAper variableArreglo CCier
+	;
+exp_com: interOp aritOper interOp
+	| PAper interOp PCier
+	| op_all
+	;
+repet: ID IGUAL exp_com
+	| ID
+	| repet COMA repet
+	;
+asigCompuesta: INTW repet PComa
+	|DOUBLE repet PComa
+	;
 %%
 int main()
 {	yyin=fopen("prueba.java","r");

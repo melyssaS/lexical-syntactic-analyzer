@@ -152,6 +152,7 @@ error2 [^{ifElse}{for}{while}{double}{int}{String}{charnew}{char}{public}{class}
 "{"   {fprintf(result,"Llave-a=%s ", yytext);return LAper;}
 "}"   {fprintf(result,"Llave-c=%s ", yytext);return LCier;}
 ;   {fprintf(result,"Punto-coma=%s ", yytext);return PComa;}
+","   {return COMA ;}
 \n {fprintf(result,"\n");return SALTOLINEA;}
 " " ;
 {error}  {setError(yytext);}

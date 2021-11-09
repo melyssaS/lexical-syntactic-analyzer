@@ -1,6 +1,6 @@
-INT Id= a, Op-asign== Cte-real=2, Punto-coma=; 
-DOUBLE Id= b, Op-asign== Cte-real=3, Punto-coma=; 
-
+INT Id= a, Op-asign== Cte-ent=2, Punto-coma=; 
+DOUBLE Id= b, Op-asign== Cte-real=2.0, Punto-coma=; 
+ No hubo ningun error sintactico.
 
 TABLA DE IDENTIFICADORES
 Hay 2 identificadores
@@ -10,5 +10,4 @@ TABLA DE ERRORES
 Hay 0 errores
 
 *****LISTA DE ERRORES SINTÁCTICOS***** 
-El número total de errores es de: 1.
-La línea 1 tiene un error de tipo: syntax error
+El número total de errores es de: 0.
