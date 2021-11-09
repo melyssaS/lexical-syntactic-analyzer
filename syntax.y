@@ -101,7 +101,84 @@ especialOper: SUMIGUAL
 	|MENIGUAL
 	| MULTIGUAL
 	| DIVIGUAL
-	;	
+	;
+
+opLogicoComparacion: IGUALIGUAL
+				   |MENIGUAL 
+				   |MAYORIGUAL
+				   |DIFF
+				   |MAYOR 
+				   |MENOR
+				   ;
+operadorLogico: YY 
+				| OO 
+					  ;
+
+
+
+condicion_simple: op opLogicoComparacion op_der
+				| PAper op opLogicoComparacion op_der PCier
+				;	
+
+condicion: condicion operadorLogico condicion
+		     | PAper condicion PCier
+			 | NOT PAper condicion PCier
+			 | condicion_simple
+			 ;	
+
+if:  IF PAper condicion PCier LAper linea LCier
+  |  if ELSE LAper linea LCier
+  |  elseif ELSE LAper linea  LCier
+  ;
+elseif: IFELSE PAper condicion PCier LAper linea LCier
+  |  IFELSE ELSE LAper linea LCier
+  ;	
+bucles: while 
+      | dowhile
+	  | for
+	  ;
+
+while: WHILE PAper condicion PCier LAper linea LCier
+     ;
+
+dowhile: DO LAper linea LCier WHILE PAper con_compuesta PCier PComa
+
+op: INT
+    |ID
+    |REAL
+    |arregloDeclar
+    ;
+op_der: INT
+    |REAL
+    |ID
+    |BOOLEAN
+    |arregloDeclar
+    ;
+op_all:
+    REAL
+    |INT
+    |ID
+    |BOOLEAN
+    |arregloDeclar
+    |STRING
+    |CHARID
+    ;
+
+variableArreglo: INT| ID ;
+arregloDeclar: ID CAper variableArreglo CCier
+    | variableArreglo CAper variableArreglo CCier
+    ;
+exp_com: interOp aritOper interOp
+    | PAper interOp PCier
+    | op_all
+    ;
+repet: ID IGUAL exp_com
+    | ID
+    | repet PComa repet
+    ;
+asigCompuesta: INTW repet PComa
+    |DOUBLE repet PComa
+    ;
 %%
 int main()
 {	yyin=fopen("prueba.java","r");
