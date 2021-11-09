@@ -89,7 +89,7 @@ asigBool: BOOLEANW ID PComa
 	| BOOLEANW ID IGUAL BOOLEAN PComa
 	;
 operador: INTW
-	|DOUBLE
+	|REAL
 	|BOOLEANW	
 	|CHAR
 	|STRINGW
