@@ -1,7 +1,7 @@
 PUBLIC CLASS Id= AnyThing, Llave-a={ 
 PUBLIC STATIC VOID Id= main, Parent-a=( STRING Corchete-a=[ Corchete-c=] Id= args, Parent-c=) Llave-a={ 
 INT Id= a, Op-asign== Cte-ent=2, Punto-coma=; 
-DOUBLE Id= b, Op-asign== Cte-ent=2, Op-sum=+ Cte-ent=3, Punto-coma=; 
+DOUBLE Id= b, Op-asign== Cte-real=2.0, Op-sum=+ Cte-real=3.0, Punto-coma=; 
 Llave-c=} 
 Llave-c=} 
 

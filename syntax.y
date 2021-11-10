@@ -17,13 +17,13 @@ int indice = 0;
 %locations
 %start linea
 %token STRING ID INT REAL BOOLEAN CHARID 
-%token IFELSE FOR WHILE DOUBLE INTW STRINGW BOOLEANW CHARNEW PUBLIC CLASS STATIC VOID CHAR IF ELSE NEW
+%token IFELSE FOR WHILE DOUBLE INTW STRINGW BOOLEANW CHARNEW PUBLIC CLASS STATIC VOID CHAR IF ELSE NEW DO
 %token COMMENT
 %token SUMSUM MENMEN SUMIGUAL MENIGUAL MULTIGUAL DIVIGUAL IGUALIGUAL MENORIGUAL MAYORIGUAL
 %token DIFF NOIGUAL YY OO NOT MAYOR MENOR
 %token MULT SUM MEN DIV IGUAL MOD
 %token PAper PCier CAper CCier LAper LCier
-%token PComa 
+%token PComa COMA PUNTOS
 %right SALTOLINEA
 %%
 
@@ -43,6 +43,8 @@ asignacion:
 	|asigCadena
 	|asigBool
 	|asigVector PComa
+	|asigMatrix PComa
+	|asigCompuesta
 	;
 
 interOp: interOp aritOper interOp
@@ -74,8 +76,17 @@ asigVector: operador CAper CCier ID
 	  | asigVector IGUAL LAper variablesPosibles LCier
 	  ;
 
+asigMatrix: operador CAper CCier CAper CCier ID
+      | asigMatrix IGUAL NEW operador CAper variableArreglo CCier CAper variableArreglo CCier
+	  | asigMatrix IGUAL LAper llaves LCier
+	  ;
+
+llaves: LAper variablesPosibles LCier
+	  | llaves COMA llaves
+	  ;
+
 variablesPosibles: INT | DOUBLE | ID | BOOLEAN | STRING | CHAR
-       | variablesPosibles PComa variablesPosibles
+       | variablesPosibles COMA variablesPosibles
 	   ;
 
 variableArreglo: INT| ID ;
@@ -89,7 +100,7 @@ asigBool: BOOLEANW ID PComa
 	| BOOLEANW ID IGUAL BOOLEAN PComa
 	;
 operador: INTW
-	|REAL
+	|DOUBLE
 	|BOOLEANW	
 	|CHAR
 	|STRINGW
@@ -111,11 +122,106 @@ generico: ID IGUAL interOp PComa
 dobleOper: SUMSUM
 	|MENMEN
 	;
+
+
+
 especialOper: SUMIGUAL
 	|MENIGUAL
 	| MULTIGUAL
 	| DIVIGUAL
-	;	
+	;
+
+opLogicoComparacion: IGUALIGUAL
+				   |MENIGUAL 
+				   |MAYORIGUAL
+				   |DIFF
+				   |MAYOR 
+				   |MENOR
+				   ;
+operadorLogico: YY 
+				| OO 
+					  ;
+
+
+
+condicion_simple: op opLogicoComparacion op_der
+				| PAper op opLogicoComparacion op_der PCier
+				;	
+
+condicion: condicion operadorLogico condicion
+		     | PAper condicion PCier
+			 | NOT PAper condicion PCier
+			 | condicion_simple
+			 ;	
+
+	
+
+if:  IF PAper condicion PCier LAper linea LCier
+  |  if ELSE LAper linea LCier
+  |  elseif ELSE LAper linea  LCier
+  ;
+elseif: IFELSE PAper condicion PCier LAper linea LCier
+  |  IFELSE ELSE LAper linea LCier
+  ;	
+
+
+statement1: operador ID IGUAL op
+		  | ID IGUAL op
+		  ;
+statement3: ID dobleOper
+		  | ID especialOper op
+		  | ID IGUAL interOp
+		  ;
+
+for: FOR PAper statement1 PComa condicion PComa statement3 PCier LAper linea LCier
+   | FOR PAper operador ID PUNTOS ID PCier LAper linea LCier
+   ;
+bucles: while 
+      | dowhile
+	  | for
+	  ;
+
+while: WHILE PAper condicion PCier LAper linea LCier
+     ;
+
+dowhile: DO LAper linea LCier WHILE PAper condicion PCier PComa
+
+op: INT
+    |ID
+    |REAL
+    |arregloDeclar
+    ;
+op_der: INT
+    |REAL
+    |ID
+    |BOOLEAN
+    |arregloDeclar
+    ;
+op_all:
+    REAL
+    |INT
+    |ID
+    |BOOLEAN
+    |arregloDeclar
+    |STRING
+    |CHARID
+    ;
+
+
+arregloDeclar: ID CAper variableArreglo CCier
+    | variableArreglo CAper variableArreglo CCier
+    ;
+exp_com: interOp aritOper interOp
+    | PAper interOp PCier
+    | op_all
+    ;
+repet: ID IGUAL exp_com
+    | ID
+    | repet COMA repet
+    ;
+asigCompuesta: INTW repet PComa
+    |DOUBLE repet PComa
+    ;
 %%
 int main()
 {	yyin=fopen("prueba.java","r");

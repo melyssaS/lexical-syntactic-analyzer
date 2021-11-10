@@ -121,6 +121,7 @@ error2 [^{ifElse}{for}{while}{double}{int}{String}{charnew}{char}{public}{class}
 {entero}    {fprintf(result,"Cte-ent=%s, ", yytext);return INT;}
 {real}    {fprintf(result,"Cte-real=%s, ", yytext);return REAL;}
 "boolean"    {fprintf(result,"%s","BOOLEAN");return BOOLEANW;}
+"do"    {fprintf(result,"%s","DO");return DO;}
 {comentario} {fprintf(result, "Comentario=%s ", yytext);return COMMENT;}
 "++"  {fprintf(result,"Op-MasMas=%s ", yytext);return SUMSUM;}
 "--" {fprintf(result,"Op-SustSust=%s ", yytext);return MENMEN;}
@@ -151,6 +152,8 @@ error2 [^{ifElse}{for}{while}{double}{int}{String}{charnew}{char}{public}{class}
 "{"   {fprintf(result,"Llave-a=%s ", yytext);return LAper;}
 "}"   {fprintf(result,"Llave-c=%s ", yytext);return LCier;}
 ;   {fprintf(result,"Punto-coma=%s ", yytext);return PComa;}
+","   {return COMA;}
+":"   {return PUNTOS;}
 \n {fprintf(result,"\n");return SALTOLINEA;}
 " " ;
 {error}  {setError(yytext);}

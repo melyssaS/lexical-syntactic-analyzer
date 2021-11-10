@@ -61,37 +61,40 @@
      IF = 277,
      ELSE = 278,
      NEW = 279,
-     COMMENT = 280,
-     SUMSUM = 281,
-     MENMEN = 282,
-     SUMIGUAL = 283,
-     MENIGUAL = 284,
-     MULTIGUAL = 285,
-     DIVIGUAL = 286,
-     IGUALIGUAL = 287,
-     MENORIGUAL = 288,
-     MAYORIGUAL = 289,
-     DIFF = 290,
-     NOIGUAL = 291,
-     YY = 292,
-     OO = 293,
-     NOT = 294,
-     MAYOR = 295,
-     MENOR = 296,
-     MULT = 297,
-     SUM = 298,
-     MEN = 299,
-     DIV = 300,
-     IGUAL = 301,
-     MOD = 302,
-     PAper = 303,
-     PCier = 304,
-     CAper = 305,
-     CCier = 306,
-     LAper = 307,
-     LCier = 308,
-     PComa = 309,
-     SALTOLINEA = 310
+     DO = 280,
+     COMMENT = 281,
+     SUMSUM = 282,
+     MENMEN = 283,
+     SUMIGUAL = 284,
+     MENIGUAL = 285,
+     MULTIGUAL = 286,
+     DIVIGUAL = 287,
+     IGUALIGUAL = 288,
+     MENORIGUAL = 289,
+     MAYORIGUAL = 290,
+     DIFF = 291,
+     NOIGUAL = 292,
+     YY = 293,
+     OO = 294,
+     NOT = 295,
+     MAYOR = 296,
+     MENOR = 297,
+     MULT = 298,
+     SUM = 299,
+     MEN = 300,
+     DIV = 301,
+     IGUAL = 302,
+     MOD = 303,
+     PAper = 304,
+     PCier = 305,
+     CAper = 306,
+     CCier = 307,
+     LAper = 308,
+     LCier = 309,
+     PComa = 310,
+     COMA = 311,
+     PUNTOS = 312,
+     SALTOLINEA = 313
    };
 #endif
 /* Tokens.  */
@@ -117,37 +120,40 @@
 #define IF 277
 #define ELSE 278
 #define NEW 279
-#define COMMENT 280
-#define SUMSUM 281
-#define MENMEN 282
-#define SUMIGUAL 283
-#define MENIGUAL 284
-#define MULTIGUAL 285
-#define DIVIGUAL 286
-#define IGUALIGUAL 287
-#define MENORIGUAL 288
-#define MAYORIGUAL 289
-#define DIFF 290
-#define NOIGUAL 291
-#define YY 292
-#define OO 293
-#define NOT 294
-#define MAYOR 295
-#define MENOR 296
-#define MULT 297
-#define SUM 298
-#define MEN 299
-#define DIV 300
-#define IGUAL 301
-#define MOD 302
-#define PAper 303
-#define PCier 304
-#define CAper 305
-#define CCier 306
-#define LAper 307
-#define LCier 308
-#define PComa 309
-#define SALTOLINEA 310
+#define DO 280
+#define COMMENT 281
+#define SUMSUM 282
+#define MENMEN 283
+#define SUMIGUAL 284
+#define MENIGUAL 285
+#define MULTIGUAL 286
+#define DIVIGUAL 287
+#define IGUALIGUAL 288
+#define MENORIGUAL 289
+#define MAYORIGUAL 290
+#define DIFF 291
+#define NOIGUAL 292
+#define YY 293
+#define OO 294
+#define NOT 295
+#define MAYOR 296
+#define MENOR 297
+#define MULT 298
+#define SUM 299
+#define MEN 300
+#define DIV 301
+#define IGUAL 302
+#define MOD 303
+#define PAper 304
+#define PCier 305
+#define CAper 306
+#define CCier 307
+#define LAper 308
+#define LCier 309
+#define PComa 310
+#define COMA 311
+#define PUNTOS 312
+#define SALTOLINEA 313
 
 
 
