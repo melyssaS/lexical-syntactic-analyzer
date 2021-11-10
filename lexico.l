@@ -118,9 +118,9 @@ error2 [^{ifElse}{for}{while}{double}{int}{String}{charnew}{char}{public}{class}
 {booleana}    {fprintf(result,"Cte-booleana=%s, ", yytext);return BOOLEAN;}
 {cadena} {fprintf(result,"Cte-cadena=%s, ", yytext);return STRING;}
 {charVar} {fprintf(result,"Cte-character=%s, ", yytext);return CHARID;}
-"boolean"    {fprintf(result,"%s","BOOLEAN");return BOOLEANW;}
-"do"    {fprintf(result,"%s","DO");return DO;}
-"float" {fprintf(result,"%s","FLOAT");return FLOAT;}
+"boolean"    {fprintf(result,"%s","BOOLEAN ");return BOOLEANW;}
+"do"    {fprintf(result,"%s","DO ");return DO;}
+"float" {fprintf(result,"%s","FLOAT ");return FLOAT;}
 {identifier}  {setIdentifier(yytext);return ID;}
 {entero}    {fprintf(result,"Cte-ent=%s, ", yytext);return INT;}
 {real}    {fprintf(result,"Cte-real=%s, ", yytext);return REAL;}
