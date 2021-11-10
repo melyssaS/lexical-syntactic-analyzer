@@ -1927,14 +1927,16 @@ int main()
 		yyparse();
 	} while(!feof(yyin));
 	if(errores==0){
-		fprintf(result, "\n No hubo ningun error sintactico.");
+			disp();
 		fprintf(stderr, "No hubo ningun error sintactico.\n");
-	}
+		fprintf(result, "\nBien.");
+	}else{
 	disp();
-	fprintf(result,"\n*****LISTA DE ERRORES SINTÁCTICOS***** \n");
+	fprintf(result,"\n-|-|-|-|LISTA DE ERRORES SINTÁCTICOS|-|-|-|-\n");
 	fprintf(result, "El número total de errores es de: %i.\n",errores);
-	for (int i=0; i<indice; i++){
-		fprintf(result, "La línea %i tiene un error de tipo: syntax error\n",error_pos[i]);
+		for (int i=0; i<indice; i++){
+			fprintf(result, "La línea %i tiene un error de tipo: syntax error\n",error_pos[i]);
+		}
 	}
 
 }

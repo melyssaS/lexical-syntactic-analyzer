@@ -164,10 +164,10 @@ error2 [^{ifElse}{for}{while}{double}{int}{String}{charnew}{char}{public}{class}
 %%
 void disp()
 {
-  fprintf(result,"\n\n%s\n","TABLA DE IDENTIFICADORES");
+  fprintf(result,"\n\n%s\n","-|-|-|-|TABLA DE IDENTIFICADORES|-|-|-|-");
   fprintf(result,"Hay %d identificadores\n",idCount);
   printIdentifier();
-  fprintf(result,"\n\n%s\n","TABLA DE ERRORES");
+  fprintf(result,"\n\n%s\n","-|-|-|-|TABLA DE ERRORES LEXICOS|-|-|-|-");
   fprintf(result,"Hay %d errores\n",errorCount);
   printError();
 }
