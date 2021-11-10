@@ -16,6 +16,7 @@ FOR Parent-a=( INT Id= k, Op-asign== Cte-ent=1, Punto-coma=; Id= k, Menor=< Id= 
 Llave-c=} 
 Llave-c=} 
 Llave-c=} 
+ No hubo ningun error sintactico.
 
 TABLA DE IDENTIFICADORES
 Hay 9 identificadores
@@ -25,6 +26,4 @@ TABLA DE ERRORES
 Hay 0 errores
 
 *****LISTA DE ERRORES SINTÁCTICOS***** 
-El número total de errores es de: 2.
-La línea 15 tiene un error de tipo: syntax error
-La línea 18 tiene un error de tipo: syntax error
+El número total de errores es de: 0.

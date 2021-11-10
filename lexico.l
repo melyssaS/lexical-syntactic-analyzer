@@ -76,8 +76,8 @@ letra [a-zA-Z]
 digito [0-9]
 validChar ($|_)
 ifElse (I|i)(F|f)-(E|e)(L|l)(S|s)(E|e) 
-if(I|i)(F|f)
-else(E|e)(L|l)(s|S)(E|e)
+if (I|i)(F|f)
+else (E|e)(L|l)(s|S)(E|e)
 for (F|f)(O|o)(R|r)
 while (W|w)(H|h)(I|i)(L|l)(E|e)
 double (D|d)(O|o)(U|u)(B|b)(L|l)(E|e)
@@ -89,7 +89,7 @@ public (P|p)(U|u)(B|b)(L|l)(I|i)(C|c)
 class (C|c)(L|l)(A|a)(S|s)(S|s)
 static (S|s)(T|t)(A|a)(T|t)(I|i)(C|c)
 void (V|v)(O|o)(I|i)(D|d)
-reservedWords (ifElse|if|for|while|double|int|String|charnew|public|class|static|void|char)
+reservedWords (ifElse|if|for|while|double|int|String|charnew|public|class|static|void|char|else)
 entero {digito}+
 booleana true|false
 real {entero}+(.{entero}+(e(\+|-){entero}+)?)?
@@ -98,7 +98,7 @@ charVar \'[_a-zA-Z0-9]\'
 identifier ({letra}|{validChar})({letra}|{digito}|{validChar})*
 comentario \/\/.*
 error {digito}+({letra}|{validChar})+
-error2 [^{ifElse}{for}{while}{double}{int}{String}{charnew}{char}{public}{class}{static}{void}{reservedWords}{entero}{real}{cadena}{identifier}{comentario}]
+error2 [^{ifElse}{for}{while}{double}{int}{String}{charnew}{char}{public}{class}{static}{void}{if}{else}{reservedWords}{entero}{real}{cadena}{identifier}{comentario}]
 %%
 {reservedWords} {toUpperCase(yytext);
                   if (strcmp(yytext,"public") == 0){return PUBLIC;}

@@ -33,6 +33,7 @@ linea:
 	|  linea PUBLIC STATIC VOID ID PAper STRINGW CAper CCier ID PCier LAper linea LCier	
 	|  linea asignacion
 	|  linea COMMENT
+	|  linea bucles
 	|  linea error SALTOLINEA
 	;
 asignacion: 
@@ -173,6 +174,7 @@ condicion: condicion operadorLogico condicion
 		     | PAper condicion PCier
 			 | NOT PAper condicion PCier
 			 | condicion_simple
+			 | BOOLEAN	
 			 ;	
 
 	

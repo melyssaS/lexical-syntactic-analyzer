@@ -12,7 +12,7 @@ public static void main (String[] args){
     cadena="Hola";
     c="a";
     i=i*2;
-    for(int k = 1; k < j; k++){
+    for(int k = 1;k < j; k++){
     }
 }
 }
