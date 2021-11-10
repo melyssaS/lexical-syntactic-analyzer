@@ -45,123 +45,121 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    STRING = 258,
-    ID = 259,
-    INT = 260,
-    REAL = 261,
-    BOOLEAN = 262,
-    CHARID = 263,
-    IFELSE = 264,
-    FOR = 265,
-    WHILE = 266,
-    DOUBLE = 267,
-    FLOAT = 268,
-    INTW = 269,
-    STRINGW = 270,
-    BOOLEANW = 271,
-    CHARNEW = 272,
-    PUBLIC = 273,
-    CLASS = 274,
-    STATIC = 275,
-    VOID = 276,
-    CHAR = 277,
-    IF = 278,
-    ELSE = 279,
-    NEW = 280,
-    DO = 281,
-    COMMENT = 282,
-    SUMSUM = 283,
-    MENMEN = 284,
-    SUMIGUAL = 285,
-    MENIGUAL = 286,
-    MULTIGUAL = 287,
-    DIVIGUAL = 288,
-    IGUALIGUAL = 289,
-    MENORIGUAL = 290,
-    MAYORIGUAL = 291,
-    DIFF = 292,
-    NOIGUAL = 293,
-    YY = 294,
-    OO = 295,
-    NOT = 296,
-    MAYOR = 297,
-    MENOR = 298,
-    MULT = 299,
-    SUM = 300,
-    MEN = 301,
-    DIV = 302,
-    IGUAL = 303,
-    MOD = 304,
-    PAper = 305,
-    PCier = 306,
-    CAper = 307,
-    CCier = 308,
-    LAper = 309,
-    LCier = 310,
-    PComa = 311,
-    COMA = 312,
-    PUNTOS = 313,
-    SALTOLINEA = 314
+    STATIC = 258,
+    PUBLIC = 259,
+    CLASS = 260,
+    VOID = 261,
+    NEW = 262,
+    VBLE = 263,
+    PARANTA = 264,
+    PARANTC = 265,
+    CORCHETEA = 266,
+    CORCHETEC = 267,
+    LLAVEA = 268,
+    LLAVEC = 269,
+    OPASIGN = 270,
+    STRING = 271,
+    INT = 272,
+    FLOAT = 273,
+    DOUBLE = 274,
+    BOOLEAN = 275,
+    CHAR = 276,
+    PCOMA = 277,
+    DOSPUNTOS = 278,
+    COMA = 279,
+    NUMENTERO = 280,
+    NUMREAL = 281,
+    VBLECHAR = 282,
+    VBLECADENA = 283,
+    VBLEBOOL = 284,
+    COMMENT = 285,
+    OPSUM = 286,
+    OPRES = 287,
+    OPMUL = 288,
+    OPDIV = 289,
+    OPMOD = 290,
+    MASMAS = 291,
+    SUSTSUST = 292,
+    MASASIG = 293,
+    SUSTASIG = 294,
+    PORASIG = 295,
+    DIVASIG = 296,
+    IGUALIGUAL = 297,
+    MENIGUAL = 298,
+    MAYIGUAL = 299,
+    DIFERENTE = 300,
+    MAYOR = 301,
+    MENOR = 302,
+    OPERY = 303,
+    OPERO = 304,
+    OPERN = 305,
+    IF = 306,
+    ELSE = 307,
+    IFELSE = 308,
+    FOR = 309,
+    WHILE = 310,
+    DO = 311,
+    NEWLINE = 312,
+    ERRORLEX = 313
   };
 #endif
 /* Tokens.  */
-#define STRING 258
-#define ID 259
-#define INT 260
-#define REAL 261
-#define BOOLEAN 262
-#define CHARID 263
-#define IFELSE 264
-#define FOR 265
-#define WHILE 266
-#define DOUBLE 267
-#define FLOAT 268
-#define INTW 269
-#define STRINGW 270
-#define BOOLEANW 271
-#define CHARNEW 272
-#define PUBLIC 273
-#define CLASS 274
-#define STATIC 275
-#define VOID 276
-#define CHAR 277
-#define IF 278
-#define ELSE 279
-#define NEW 280
-#define DO 281
-#define COMMENT 282
-#define SUMSUM 283
-#define MENMEN 284
-#define SUMIGUAL 285
-#define MENIGUAL 286
-#define MULTIGUAL 287
-#define DIVIGUAL 288
-#define IGUALIGUAL 289
-#define MENORIGUAL 290
-#define MAYORIGUAL 291
-#define DIFF 292
-#define NOIGUAL 293
-#define YY 294
-#define OO 295
-#define NOT 296
-#define MAYOR 297
-#define MENOR 298
-#define MULT 299
-#define SUM 300
-#define MEN 301
-#define DIV 302
-#define IGUAL 303
-#define MOD 304
-#define PAper 305
-#define PCier 306
-#define CAper 307
-#define CCier 308
-#define LAper 309
-#define LCier 310
-#define PComa 311
-#define COMA 312
-#define PUNTOS 313
-#define SALTOLINEA 314
+#define STATIC 258
+#define PUBLIC 259
+#define CLASS 260
+#define VOID 261
+#define NEW 262
+#define VBLE 263
+#define PARANTA 264
+#define PARANTC 265
+#define CORCHETEA 266
+#define CORCHETEC 267
+#define LLAVEA 268
+#define LLAVEC 269
+#define OPASIGN 270
+#define STRING 271
+#define INT 272
+#define FLOAT 273
+#define DOUBLE 274
+#define BOOLEAN 275
+#define CHAR 276
+#define PCOMA 277
+#define DOSPUNTOS 278
+#define COMA 279
+#define NUMENTERO 280
+#define NUMREAL 281
+#define VBLECHAR 282
+#define VBLECADENA 283
+#define VBLEBOOL 284
+#define COMMENT 285
+#define OPSUM 286
+#define OPRES 287
+#define OPMUL 288
+#define OPDIV 289
+#define OPMOD 290
+#define MASMAS 291
+#define SUSTSUST 292
+#define MASASIG 293
+#define SUSTASIG 294
+#define PORASIG 295
+#define DIVASIG 296
+#define IGUALIGUAL 297
+#define MENIGUAL 298
+#define MAYIGUAL 299
+#define DIFERENTE 300
+#define MAYOR 301
+#define MENOR 302
+#define OPERY 303
+#define OPERO 304
+#define OPERN 305
+#define IF 306
+#define ELSE 307
+#define IFELSE 308
+#define FOR 309
+#define WHILE 310
+#define DO 311
+#define NEWLINE 312
+#define ERRORLEX 313
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

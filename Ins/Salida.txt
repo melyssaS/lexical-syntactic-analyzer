@@ -1,0 +1,26 @@
+PUBLIC CLASS Id= AnyThing, Llave-a= { 
+AIUDAAAAAAAPUBLIC STATIC VOID Id= main, Parent-a= ( STRING Corchete-a= [ Corchete-c= ] Id= args, Parent-c= ) Llave-a= { 
+AIUDAAAAAAAINT Id= i, Op-asign= = Cte-ent= 1, Punto-coma= ; 
+AIUDAAAAAAAINT Id= j, Op-asign= = Cte-ent= 20, Punto-coma= ; 
+AIUDAAAAAAACHAR Id= c, Punto-coma= ; 
+AIUDAAAAAAASTRING Id= cadena, Punto-coma= ; 
+AIUDAAAAAAADOUBLE Id= z, Punto-coma= ; 
+AIUDAAAAAAAId= z, Op-asign= = Cte-real= 14.9e-8, Punto-coma= ; 
+AIUDAAAAAAAId= z, Op-asign= = Cte-real= 12.9, Punto-coma= ; 
+AIUDAAAAAAAId= cadena, Op-asign= = Cte-cadena= "Hola", 
+Id= c, Op-asign= = Cte-cadena= "a", Punto-coma= ; 
+AIUDAAAAAAAId= i, Op-asign= = Id= i, Op-mult= * Cte-ent= 2, Punto-coma= ; 
+AIUDAAAAAAAFOR Parent-a= ( INT Id= k, Op-asign= = Cte-ent= 1, Punto-coma= ; Id= k, Menor= < Id= j, Punto-coma= ; Id= k, Op-MasMas= ++ Parent-c= ) Llave-a= { 
+AIUDAAAAAAAId= i, Op-PorAsig= *= Id= k, Punto-coma= ; 
+AIUDAAAAAAAId= z, Op-DivAsig= /= Cte-real= 2.0, Punto-coma= ; 
+AIUDAAAAAAALlave-c= } 
+AIUDAAAAAAALlave-c= } 
+AIUDAAAAAAALlave-c= } 
+AIUDAAAAAAA
+AIUDAAAAAAA********TABLA DE IDENTIFICADORES******** 
+Hay 9 identificadores 
+Id= AnyThing| Id= main| Id= args| Id= i| Id= j| Id= c| Id= cadena| Id= z| Id= k| 
+
+*****LISTA DE ERRORES SINTÁCTICOS***** 
+El número total de errores es de: 1.
+La línea 11 tiene un error de tipo: syntax error

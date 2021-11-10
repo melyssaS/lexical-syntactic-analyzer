@@ -17,7 +17,7 @@ int indice = 0;
 %locations
 %start linea
 %token STRING ID INT REAL BOOLEAN CHARID 
-%token IFELSE FOR WHILE DOUBLE INTW STRINGW BOOLEANW CHARNEW PUBLIC CLASS STATIC VOID CHAR IF ELSE NEW DO
+%token IFELSE FOR WHILE DOUBLE FLOAT INTW STRINGW BOOLEANW CHARNEW PUBLIC CLASS STATIC VOID CHAR IF ELSE NEW DO
 %token COMMENT
 %token SUMSUM MENMEN SUMIGUAL MENIGUAL MULTIGUAL DIVIGUAL IGUALIGUAL MENORIGUAL MAYORIGUAL
 %token DIFF NOIGUAL YY OO NOT MAYOR MENOR
@@ -61,6 +61,12 @@ asigReal: DOUBLE ID PComa
 	| DOUBLE ID IGUAL REAL PComa
 	| DOUBLE ID IGUAL interOp PComa
 	;
+asigFloat: FLOAT ID PComa
+	| FLOAT ID IGUAL ID PComa
+	| FLOAT ID IGUAL REAL PComa
+	| FLOAT ID IGUAL interOp PComa
+	;
+	;
 asigChar: CHAR ID PComa
 	| CHAR ID IGUAL ID PComa
 	| CHAR ID IGUAL CHARID PComa
@@ -85,8 +91,14 @@ llaves: LAper variablesPosibles LCier
 	  | llaves COMA llaves
 	  ;
 
-variablesPosibles: INT | DOUBLE | ID | BOOLEAN | STRING | CHAR
-       | variablesPosibles COMA variablesPosibles
+variablesPosibles: INT 
+		| DOUBLE 
+		| FLOAT	
+		| ID 
+		| BOOLEAN 
+		| STRING 
+		| CHAR
+        | variablesPosibles COMA variablesPosibles
 	   ;
 
 variableArreglo: INT| ID ;
@@ -100,10 +112,11 @@ asigBool: BOOLEANW ID PComa
 	| BOOLEANW ID IGUAL BOOLEAN PComa
 	;
 operador: INTW
-	|DOUBLE
 	|BOOLEANW	
-	|CHAR
+	|DOUBLE
+	|FLOAT
 	|STRINGW
+	|CHAR
 	;
 aritOper: SUM
 	|MEN
@@ -122,8 +135,6 @@ generico: ID IGUAL interOp PComa
 dobleOper: SUMSUM
 	|MENMEN
 	;
-
-
 
 especialOper: SUMIGUAL
 	|MENIGUAL
@@ -184,7 +195,7 @@ bucles: while
 while: WHILE PAper condicion PCier LAper linea LCier
      ;
 
-dowhile: DO LAper linea LCier WHILE PAper condicion PCier PComa
+dowhile: DO LAper linea LCier WHILE PAper condicion PCier PComa;
 
 op: INT
     |ID
@@ -221,11 +232,12 @@ repet: ID IGUAL exp_com
     ;
 asigCompuesta: INTW repet PComa
     |DOUBLE repet PComa
+	|FLOAT repet PComa
     ;
 %%
 int main()
 {	yyin=fopen("prueba.java","r");
-	result=fopen("Salida.txt","w");
+	result=fopen("saliday.txt","w");
 	do {
 		yyparse();
 	} while(!feof(yyin));
@@ -244,9 +256,6 @@ int main()
 void yyerror(const char *s) 
 {
 	errores++;
-	if(strcmp(yytext,"\n")==0){
-		fprintf(stderr, "\n La línea %d tiene un error de tipo: %s\n",(yylineno-1),s);
-	}
 	fprintf(stderr, "La línea %d tiene un error de tipo: %s\n",yylineno,s);
 	add(yylineno,indice);
 	indice++;

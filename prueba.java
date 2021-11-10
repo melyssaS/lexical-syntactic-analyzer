@@ -1,6 +1,9 @@
 public class AnyThing{
-    public static void main (String[] args){
-        int a = 2;
-        double b = 2.0 + 3.0;
-    }
+public static void main (String[] args){
+float x=2;
+int yy=0;
+float lo;
+int j,m;
+j = 2*y++5;
+}
 }

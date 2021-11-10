@@ -71,6 +71,7 @@ void printError(){
 }
 void disp();
 %}
+%option yylineno
 letra [a-zA-Z]
 digito [0-9]
 validChar ($|_)
@@ -93,7 +94,7 @@ entero {digito}+
 booleana true|false
 real {entero}+(.{entero}+(e(\+|-){entero}+)?)?
 cadena \"(.*?)\"
-charVar \'[_a-zA-Z0-9]*\'
+charVar \'[_a-zA-Z0-9]\'
 identifier ({letra}|{validChar})({letra}|{digito}|{validChar})*
 comentario \/\/.*
 error {digito}+({letra}|{validChar})+
@@ -117,11 +118,12 @@ error2 [^{ifElse}{for}{while}{double}{int}{String}{charnew}{char}{public}{class}
 {booleana}    {fprintf(result,"Cte-booleana=%s, ", yytext);return BOOLEAN;}
 {cadena} {fprintf(result,"Cte-cadena=%s, ", yytext);return STRING;}
 {charVar} {fprintf(result,"Cte-character=%s, ", yytext);return CHARID;}
+"boolean"    {fprintf(result,"%s","BOOLEAN");return BOOLEANW;}
+"do"    {fprintf(result,"%s","DO");return DO;}
+"float" {fprintf(result,"%s","FLOAT");return FLOAT;}
 {identifier}  {setIdentifier(yytext);return ID;}
 {entero}    {fprintf(result,"Cte-ent=%s, ", yytext);return INT;}
 {real}    {fprintf(result,"Cte-real=%s, ", yytext);return REAL;}
-"boolean"    {fprintf(result,"%s","BOOLEAN");return BOOLEANW;}
-"do"    {fprintf(result,"%s","DO");return DO;}
 {comentario} {fprintf(result, "Comentario=%s ", yytext);return COMMENT;}
 "++"  {fprintf(result,"Op-MasMas=%s ", yytext);return SUMSUM;}
 "--" {fprintf(result,"Op-SustSust=%s ", yytext);return MENMEN;}
