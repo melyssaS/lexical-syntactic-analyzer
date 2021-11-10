@@ -104,6 +104,7 @@ error2 [^{ifElse}{for}{while}{double}{int}{String}{charnew}{char}{public}{class}
                   if (strcmp(yytext,"public") == 0){return PUBLIC;}
                   else if (strcmp(yytext,"if-else") == 0){return IFELSE;}
                   else if (strcmp(yytext,"if") == 0){return IF;}
+                  else if (strcmp(yytext,"double") == 0){return DOUBLE;}
                   else if (strcmp(yytext,"else") == 0){return ELSE;}
                   else if (strcmp(yytext,"void") == 0){return VOID;}
                   else if (strcmp(yytext,"int") == 0){return INTW;}

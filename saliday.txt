@@ -1,20 +1,30 @@
 PUBLIC CLASS Id= AnyThing, Llave-a={ 
 PUBLIC STATIC VOID Id= main, Parent-a=( STRING Corchete-a=[ Corchete-c=] Id= args, Parent-c=) Llave-a={ 
-FLOATId= x, Op-asign== Cte-ent=2, Punto-coma=; 
-INT Id= yy, Op-asign== Cte-ent=0, Punto-coma=; 
-FLOATId= lo, Punto-coma=; 
-INT Id= j, Id= m, Punto-coma=; 
-Id= j, Op-asign== Cte-ent=2, Op-mult=* Id= y, Op-MasMas=++ Cte-ent=5, Punto-coma=; 
+INT Id= i, Op-asign== Cte-ent=1, Punto-coma=; 
+INT Id= j, Op-asign== Cte-ent=20, Punto-coma=; 
+CHAR Id= c, Punto-coma=; 
+STRING Id= cadena, Punto-coma=; 
+DOUBLE Id= z, Punto-coma=; 
+Id= z, Op-asign== Cte-real=14.9e-8, Punto-coma=; 
+Id= z, Op-asign== Cte-real=12.9, Punto-coma=; 
+Id= i, Op-PorAsign=*= Id= k, Punto-coma=; 
+Id= z, Op-DivAsign=/= Cte-real=2.0, Punto-coma=; 
+Id= cadena, Op-asign== Cte-cadena="Hola", Punto-coma=; 
+Id= c, Op-asign== Cte-cadena="a", Punto-coma=; 
+Id= i, Op-asign== Id= i, Op-mult=* Cte-ent=2, Punto-coma=; 
+FOR Parent-a=( INT Id= k, Op-asign== Cte-ent=1, Punto-coma=; Id= k, Menor=< Id= j, Punto-coma=; Id= k, Op-MasMas=++ Parent-c=) Llave-a={ 
+Llave-c=} 
 Llave-c=} 
 Llave-c=} 
 
 TABLA DE IDENTIFICADORES
 Hay 9 identificadores
-Id=AnyThing; Id=main; Id=args; Id=x; Id=yy; Id=lo; Id=j; Id=m;Id=y
+Id=AnyThing; Id=main; Id=args; Id=i; Id=j; Id=c; Id=cadena; Id=z;Id=k
 
 TABLA DE ERRORES
 Hay 0 errores
 
 *****LISTA DE ERRORES SINTÁCTICOS***** 
-El número total de errores es de: 1.
-La línea 7 tiene un error de tipo: syntax error
+El número total de errores es de: 2.
+La línea 15 tiene un error de tipo: syntax error
+La línea 18 tiene un error de tipo: syntax error

@@ -974,6 +974,7 @@ YY_RULE_SETUP
                   if (strcmp(yytext,"public") == 0){return PUBLIC;}
                   else if (strcmp(yytext,"if-else") == 0){return IFELSE;}
                   else if (strcmp(yytext,"if") == 0){return IF;}
+                  else if (strcmp(yytext,"double") == 0){return DOUBLE;}
                   else if (strcmp(yytext,"else") == 0){return ELSE;}
                   else if (strcmp(yytext,"void") == 0){return VOID;}
                   else if (strcmp(yytext,"int") == 0){return INTW;}
@@ -988,237 +989,237 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 118 "lexico.l"
+#line 119 "lexico.l"
 {fprintf(result,"Cte-booleana=%s, ", yytext);return BOOLEAN;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 119 "lexico.l"
+#line 120 "lexico.l"
 {fprintf(result,"Cte-cadena=%s, ", yytext);return STRING;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 120 "lexico.l"
+#line 121 "lexico.l"
 {fprintf(result,"Cte-character=%s, ", yytext);return CHARID;}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 121 "lexico.l"
-{fprintf(result,"%s","BOOLEAN");return BOOLEANW;}
+#line 122 "lexico.l"
+{fprintf(result,"%s","BOOLEAN ");return BOOLEANW;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 122 "lexico.l"
-{fprintf(result,"%s","DO");return DO;}
+#line 123 "lexico.l"
+{fprintf(result,"%s","DO ");return DO;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 123 "lexico.l"
-{fprintf(result,"%s","FLOAT");return FLOAT;}
+#line 124 "lexico.l"
+{fprintf(result,"%s","FLOAT ");return FLOAT;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 124 "lexico.l"
+#line 125 "lexico.l"
 {setIdentifier(yytext);return ID;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 125 "lexico.l"
+#line 126 "lexico.l"
 {fprintf(result,"Cte-ent=%s, ", yytext);return INT;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 126 "lexico.l"
+#line 127 "lexico.l"
 {fprintf(result,"Cte-real=%s, ", yytext);return REAL;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 127 "lexico.l"
+#line 128 "lexico.l"
 {fprintf(result, "Comentario=%s ", yytext);return COMMENT;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 128 "lexico.l"
+#line 129 "lexico.l"
 {fprintf(result,"Op-MasMas=%s ", yytext);return SUMSUM;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 129 "lexico.l"
+#line 130 "lexico.l"
 {fprintf(result,"Op-SustSust=%s ", yytext);return MENMEN;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 130 "lexico.l"
+#line 131 "lexico.l"
 {fprintf(result,"Op-SumAsign=%s ", yytext);return SUMIGUAL;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 131 "lexico.l"
+#line 132 "lexico.l"
 {fprintf(result,"Op-SustAsign=%s ", yytext);return MENIGUAL;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 132 "lexico.l"
+#line 133 "lexico.l"
 {fprintf(result,"Op-PorAsign=%s ", yytext);return MULTIGUAL;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 133 "lexico.l"
+#line 134 "lexico.l"
 {fprintf(result,"Op-DivAsign=%s ", yytext);return DIVIGUAL;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 134 "lexico.l"
+#line 135 "lexico.l"
 {fprintf(result,"Igual-igual=%s ", yytext);return IGUALIGUAL;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 135 "lexico.l"
+#line 136 "lexico.l"
 {fprintf(result,"Menor-igual=%s ", yytext);return MENORIGUAL;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 136 "lexico.l"
+#line 137 "lexico.l"
 {fprintf(result,"Mayor-igual=%s ", yytext);return MAYORIGUAL;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 137 "lexico.l"
+#line 138 "lexico.l"
 {fprintf(result,"Diferente=%s ", yytext);return NOIGUAL;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 138 "lexico.l"
+#line 139 "lexico.l"
 {fprintf(result,"Diferente=%s ", yytext);return DIFF;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 139 "lexico.l"
+#line 140 "lexico.l"
 {fprintf(result,"Op-y=%s ", yytext);return YY;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 140 "lexico.l"
+#line 141 "lexico.l"
 {fprintf(result,"Op-o=%s ", yytext);return OO;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 141 "lexico.l"
+#line 142 "lexico.l"
 {fprintf(result,"Op-no=%s ", yytext);return NOT;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 142 "lexico.l"
+#line 143 "lexico.l"
 {fprintf(result,"Mayor=%s ", yytext);return MAYOR;}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 143 "lexico.l"
+#line 144 "lexico.l"
 {fprintf(result,"Menor=%s ", yytext);return MENOR;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 144 "lexico.l"
+#line 145 "lexico.l"
 {fprintf(result,"Op-mult=%s ", yytext);return MULT;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 145 "lexico.l"
+#line 146 "lexico.l"
 {fprintf(result,"Op-sum=%s ", yytext);return SUM;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 146 "lexico.l"
+#line 147 "lexico.l"
 {fprintf(result,"Op-sust=%s ", yytext);return MEN;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 147 "lexico.l"
+#line 148 "lexico.l"
 {fprintf(result,"Op-div=%s ", yytext);return DIV;}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 148 "lexico.l"
+#line 149 "lexico.l"
 {fprintf(result,"Op-asign=%s ", yytext);return IGUAL;}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 149 "lexico.l"
+#line 150 "lexico.l"
 {fprintf(result,"Op-mod=%s ", yytext);return MOD;}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 150 "lexico.l"
+#line 151 "lexico.l"
 {fprintf(result,"Parent-a=%s ", yytext);return PAper;}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 151 "lexico.l"
+#line 152 "lexico.l"
 {fprintf(result,"Parent-c=%s ", yytext);return PCier;}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 152 "lexico.l"
+#line 153 "lexico.l"
 {fprintf(result,"Corchete-a=%s ", yytext);return CAper;}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 153 "lexico.l"
+#line 154 "lexico.l"
 {fprintf(result,"Corchete-c=%s ", yytext);return CCier;}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 154 "lexico.l"
+#line 155 "lexico.l"
 {fprintf(result,"Llave-a=%s ", yytext);return LAper;}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 155 "lexico.l"
+#line 156 "lexico.l"
 {fprintf(result,"Llave-c=%s ", yytext);return LCier;}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 156 "lexico.l"
+#line 157 "lexico.l"
 {fprintf(result,"Punto-coma=%s ", yytext);return PComa;}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 157 "lexico.l"
+#line 158 "lexico.l"
 {return COMA;}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 158 "lexico.l"
+#line 159 "lexico.l"
 {return PUNTOS;}
 	YY_BREAK
 case 43:
 /* rule 43 can match eol */
 YY_RULE_SETUP
-#line 159 "lexico.l"
+#line 160 "lexico.l"
 {fprintf(result,"\n");return SALTOLINEA;}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 160 "lexico.l"
+#line 161 "lexico.l"
 ;
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 161 "lexico.l"
+#line 162 "lexico.l"
 {setError(yytext);}
 	YY_BREAK
 case 46:
 /* rule 46 can match eol */
 YY_RULE_SETUP
-#line 162 "lexico.l"
+#line 163 "lexico.l"
 {setError(yytext);}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 163 "lexico.l"
+#line 164 "lexico.l"
 YY_FATAL_ERROR( "flex scanner jammed" );
 	YY_BREAK
-#line 1222 "lex.yy.c"
+#line 1223 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2235,7 +2236,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 163 "lexico.l"
+#line 164 "lexico.l"
 
 void disp()
 {

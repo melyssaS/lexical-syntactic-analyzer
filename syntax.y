@@ -39,6 +39,7 @@ asignacion:
 	generico
 	|asigEntera
 	|asigReal
+	|asigFloat
 	|asigChar
 	|asigCadena
 	|asigBool
@@ -49,8 +50,9 @@ asignacion:
 
 interOp: interOp aritOper interOp
 	| PAper interOp PCier
-	| operador
+	| types
 	;
+types: INT|REAL|STRING|CHARID| BOOLEAN|ID;
 asigEntera: INTW ID PComa
 	| INTW ID IGUAL ID PComa
 	| INTW ID IGUAL INT PComa
@@ -128,11 +130,12 @@ generico: ID IGUAL interOp PComa
 	| ID IGUAL CHAR PComa
 	| ID IGUAL BOOLEAN PComa
 	| ID IGUAL STRING PComa
+	| ID IGUAL REAL PComa
 	| ID IGUAL concatenacion PComa
 	| ID dobleOper PComa
-	| ID especialOper		
+	| ID especialOper opLog PComa
 	;
-dobleOper: SUMSUM
+dobleOper:SUMSUM
 	|MENMEN
 	;
 
@@ -142,23 +145,30 @@ especialOper: SUMIGUAL
 	| DIVIGUAL
 	;
 
-opLogicoComparacion: IGUALIGUAL
-				   |MENIGUAL 
+opLogicoComparacion:IGUALIGUAL
+				   |MENORIGUAL 
 				   |MAYORIGUAL
 				   |DIFF
 				   |MAYOR 
 				   |MENOR
+				   |NOIGUAL
 				   ;
 operadorLogico: YY 
-				| OO 
+				| OO
 					  ;
 
 
 
-condicion_simple: op opLogicoComparacion op_der
-				| PAper op opLogicoComparacion op_der PCier
+condicion_simple: opLog opLogicoComparacion opLog
+				| PAper op opLogicoComparacion opLog PCier
 				;	
-
+opLog: ID
+	|STRING
+	|INT
+	|REAL
+	|BOOLEAN
+	|CHARID	
+	;
 condicion: condicion operadorLogico condicion
 		     | PAper condicion PCier
 			 | NOT PAper condicion PCier
@@ -176,11 +186,12 @@ elseif: IFELSE PAper condicion PCier LAper linea LCier
   ;	
 
 
-statement1: operador ID IGUAL op
-		  | ID IGUAL op
+statement1: INTW ID IGUAL INT
+		  | ID IGUAL INT
+		  | ID
 		  ;
 statement3: ID dobleOper
-		  | ID especialOper op
+		  | ID especialOper opLog
 		  | ID IGUAL interOp
 		  ;
 
